@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item
+        android:id="@+id/ic_home"
+        android:icon="@drawable/bv_home"
+        android:title="Anasayfa"
+        />
+    <item
+        android:id="@+id/ic_wallet"
+        android:icon="@drawable/bv_wallet"
+        android:title="Cüzdan"
+        />
+    <item
+        android:id="@+id/ic_markets"
+        android:icon="@drawable/bv_markets"
+        android:title="Piyasalar"
+        />
+    <item
+        android:id="@+id/ic_sorting"
+        android:icon="@drawable/bv_sorting"
+        android:title="Sıralama"
+        />
+    <item
+        android:id="@+id/ic_settings"
+        android:icon="@drawable/bv_settings"
+        android:title="Ayarlar"
+        />
+
+
+</menu>

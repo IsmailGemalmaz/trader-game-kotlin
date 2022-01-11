@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">kotlin crypto</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="no_connection_internet">İnternet Bağlantısı Yok</string>
+</resources>

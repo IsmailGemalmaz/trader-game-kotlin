@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragment.MarketsFragment">
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srMarkets"
+        android:layout_width="match_parent"
+        android:layout_height="80mm"
+        android:layout_alignParentBottom="true"
+        >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80mm"
+        android:layout_alignParentBottom="true"
+        >
+
+        <TextView
+            android:id="@+id/tvCryptoError"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Hata oluştu..."
+            android:textSize="20sp"
+            android:gravity="center"
+            />
+
+        <ProgressBar
+            android:id="@+id/prCryptoLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCryptoList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</RelativeLayout>
