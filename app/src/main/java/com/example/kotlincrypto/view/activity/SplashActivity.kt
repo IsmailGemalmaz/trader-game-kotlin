@@ -11,7 +11,7 @@ import com.example.kotlincrypto.view.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 
-class SplashActivity :BaseActivity(),View.OnClickListener{
+class SplashActivity :BaseActivity(){
 
     private val SPLASH_TIME:Long=2000
     lateinit var manager:ConnectivityManager
@@ -24,7 +24,7 @@ class SplashActivity :BaseActivity(),View.OnClickListener{
     override fun createViews() {
         super.createViews()
         manager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
-      btn.setOnClickListener(this)
+
         Handler(Looper.myLooper()!!).postDelayed({
             if(manager.activeNetwork !=null){
                 startActivity(Intent(this,MainActivity::class.java))
@@ -36,10 +36,6 @@ class SplashActivity :BaseActivity(),View.OnClickListener{
 
         },SPLASH_TIME)
     }
-    override fun onClick(v: View?) {
-        if (v == btn) {
-          CryptoDetailActivity.start(activity)
-        }
-    }
+
 
 }

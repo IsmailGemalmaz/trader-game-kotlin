@@ -8,17 +8,26 @@
     tools:context=".view.activity.MainActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+
         android:id="@+id/bv_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
+        android:animationCache="true"
         app:menu="@menu/menu"
-        android:background="@color/colorPrimaryDark"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+       app:itemIconTint="@drawable/selector_bottom_navigation"
+        app:itemTextColor="@drawable/selector_bottom_navigation"
+        android:background="@drawable/layout_bottom_nav"
+
         />
 
     <FrameLayout
+        android:layout_marginBottom="5dp"
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"

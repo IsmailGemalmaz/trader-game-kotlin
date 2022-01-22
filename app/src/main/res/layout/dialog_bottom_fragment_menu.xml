@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -27,24 +26,24 @@
                 android:id="@+id/btnDetail"
                 style="@style/DialogButton"
                 android:text="Detaylı İncele"
-                android:textColor="@color/purple_700"
+                android:textColor="@color/colorTextColor"
+                android:background="@drawable/selector_bottom_dialog_btn"
                 />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
-                android:background="@color/colorPrimary" />
+                android:background="@color/colorTextColor" />
 
             <Button
                 android:id="@+id/btnBuy"
                 style="@style/DialogButton"
                 android:text="Satın Al"
-                android:textColor="@color/green" />
+                android:textColor="@color/green"
+               android:background="@drawable/selector_bottom_dialog_btn"
+                />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/colorPrimary" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -60,7 +59,9 @@
             android:id="@+id/btnCancel"
             style="@style/DialogButton"
             android:text="İptal Et"
-            android:textColor="@color/red" />
+            android:textColor="@color/red"
+            android:background="@drawable/selector_bottom_dialog_btn"
+            />
     </androidx.cardview.widget.CardView>
 
 

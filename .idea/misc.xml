@@ -7,23 +7,37 @@
         <entry key="../../Android/Sdk/platforms/android-31/data/res/layout/auto_complete_list.xml" value="0.3523550724637681" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/bv_home.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/color_gardient.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/ic_baseline_account_balance_24.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/img_dolar.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/layout_bottom_nav.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/layout_screen_radius.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/selector_bottom_dialog_btn.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/selector_bottom_navigation.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/selector_buy_button.xml" value="0.35555555555555557" />
+        <entry key="app/src/main/res/drawable/selector_item_crypto.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/selector_sell_button.xml" value="0.35555555555555557" />
         <entry key="app/src/main/res/drawable/shape_cricle.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/shape_item_crypto.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/shape_user_img.xml" value="0.371875" />
+        <entry key="app/src/main/res/layout/activity_crypto_detail.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.3523550724637681" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="app/src/main/res/layout/dialog_bottom_fragment_menu.xml" value="0.3523550724637681" />
-        <entry key="app/src/main/res/layout/dialog_get_information.xml" value="0.34782608695652173" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/dialog_get_information.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_markets.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_sorting.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_wallet.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/layout_crypto_list_item_details.xml" value="0.3283514492753623" />
         <entry key="app/src/main/res/layout/layout_item_crypto.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/layout_item_wallet.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/slider_layout.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/widget_bottom_tab_view.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.371875" />

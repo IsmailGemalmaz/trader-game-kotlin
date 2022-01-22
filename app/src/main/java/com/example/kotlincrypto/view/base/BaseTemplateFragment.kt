@@ -74,10 +74,10 @@ abstract class BaseTemplateFragment() : Fragment() {
         val layoutId = getLayoutId()
         vgContent = inflater.inflate(layoutId, null) as ViewGroup
       //  mIsActivityRecreated = activity!!.isRecreated()
-        if (mIsActivityRecreated) {
+
             initialize()
             onCreated()
-        }
+
         return vgContent
     }
 

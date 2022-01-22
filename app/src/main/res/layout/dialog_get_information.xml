@@ -1,43 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/rlLink"
+<RelativeLayout android:id="@+id/rlLink"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageButton
-
         android:id="@+id/ibClose"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_gravity="right"
-        android:background="?selectableItemBackgroundBorderless"
-
-        android:layout_marginLeft="350dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/img_back"
         />
 
-
-    <TextView
-        android:id="@+id/text"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif"
-        android:text="asfsaf"
-        android:padding="30dp"
-        android:textColor="@color/white"
-        />
+        android:orientation="vertical"
+       android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        >
+        <TextView
+            android:id="@+id/tvTakeInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:fontFamily="sans-serif"
+            android:text="@string/tv_buy"
+            android:textColor="@color/colorBuy"
+            />
 
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:src="@drawable/img_splash_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="220dp"
-        android:layout_alignParentBottom="true"
+        <TextView
+            android:id="@+id/tvInfoCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:layout_gravity="center"
+            android:text="BTC"
+            android:textSize="40sp" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
-        />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etAmountt"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Fiyat Gir"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:counterMaxLength="5"
+            app:startIconDrawable="@drawable/img_dolar">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+   <Button
+       android:id="@+id/btnInformationBuy"
+       android:layout_width="350dp"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:layout_centerHorizontal="true"
+       android:background="@drawable/selector_buy_button"
+       android:text="@string/tv_accept"
+       android:layout_marginBottom="10dp"
+       android:textSize="20sp"
+       />
 </RelativeLayout>

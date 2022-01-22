@@ -33,11 +33,10 @@ class MainActivity:BaseActivity() {
         replaceFragment(homeFragment)
         bv_navigation.setOnNavigationItemSelectedListener() {
             when (it.itemId) {
-                R.id.ic_home -> replaceFragment(homeFragment)
                 R.id.ic_markets -> replaceFragment(marketsFragment)
                 R.id.ic_settings -> replaceFragment(settingsFragment)
                 R.id.ic_sorting -> replaceFragment(sortingFragment)
-                R.id.ic_wallet -> replaceFragment(walletFragment)
+                R.id.ic_home -> replaceFragment(homeFragment)
             }
             true
         }

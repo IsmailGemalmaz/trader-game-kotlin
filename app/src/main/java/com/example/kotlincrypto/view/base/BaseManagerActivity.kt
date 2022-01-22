@@ -2,7 +2,7 @@ package com.example.kotlincrypto.view.base
 
 import android.content.Intent
 
-abstract class BaseManagerActivity :BaseTemplateActivity(){
+abstract class BaseManagerActivity :BaseUtilityActivity(){
  private val mManagers: MutableList<BaseManager> = ArrayList()
 
  open fun registerManager(baseManager: BaseManager) {

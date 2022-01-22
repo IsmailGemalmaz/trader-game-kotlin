@@ -4,6 +4,8 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+
 }
 
 
@@ -43,6 +45,7 @@ android {
 
 }
 
+
 dependencies {
     def lifeCycleExtensionVersion = '1.1.1'
     def supportVersion = '28.0.0'
@@ -52,7 +55,7 @@ dependencies {
     def roomVersion = '2.4.0'
     def navVersion = '2.3.5'
     def preferencesVersion = '1.1.1'
-    def paging_version = "3.0.0"
+    def hilt_version = "2.28-alpha"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
@@ -69,6 +72,7 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
     kapt "androidx.room:room-compiler:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
+
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
 
     //navigation
@@ -77,7 +81,7 @@ dependencies {
 
     //design
     implementation "com.google.android.material:material:1.4.0"
-
+    implementation 'com.google.android.material:material:1.5.0-alpha05'
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
@@ -89,6 +93,7 @@ dependencies {
 
     //görsel indirmek için
     implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     //renk analiz eder
     implementation "com.android.support:palette-v7:$supportVersion"
@@ -97,15 +102,9 @@ dependencies {
     //kullannıcının tercihlrini hatırlamak için kullanırız
     implementation "androidx.preference:preference-ktx:$preferencesVersion"
 
-
-    implementation "androidx.paging:paging-runtime:$paging_version"
-
-    // optional - RxJava2 support
-    implementation "androidx.paging:paging-rxjava2:$paging_version"
-
-    // optional - RxJava3 support
-    implementation "androidx.paging:paging-rxjava3:$paging_version"
-
+    //hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
 
 }

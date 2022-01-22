@@ -1,23 +1,46 @@
 package com.example.kotlincrypto.service
 
-import com.example.kotlincrypto.model.CryptoModel
+import com.example.kotlincrypto.constant.ApiEndpoint
+import com.example.kotlincrypto.model.entity.CryptoModel
+import com.example.kotlincrypto.model.entity.WalletGetModel
+import com.example.kotlincrypto.model.entity.WalletPostModel
+import com.example.kotlincrypto.service.ServiceBuilder.apiGetBuild
 import io.reactivex.Observable
-import io.reactivex.Single
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 class CryptoApiService {
 
-    private val BASE_URL="https://api.nomics.com/v1/"
-    private val api= Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .build()
-        .create(CryptoApi::class.java)
+    fun addWallet(walletData: WalletPostModel, onResult:(WalletPostModel)->Unit){
+        val retrofit = ServiceBuilder.buildService(CryptoApi::class.java,ApiEndpoint.APP_API_BASE)
+        retrofit.addWallet(ApiEndpoint.APP_POST_WALLET,walletData).enqueue(
+            object : Callback<WalletPostModel> {
+                override fun onFailure(call: Call<WalletPostModel>, t: Throwable) {
+                    onResult
+                }
+                override fun onResponse(call: Call<WalletPostModel>, response: Response<WalletPostModel>) {
+                    val addedUser = response.body()
+                    if (addedUser != null) {
+                        onResult(addedUser)
+                    }
+                }
+            }
+        )
+    }
 
-    fun getData(): Observable<List<CryptoModel>> {
-        return api.getCrypto()
+    fun getCryptoData(): Observable<List<CryptoModel>> {
+        return apiGetBuild(ApiEndpoint.CRYPTO_NOMICS_BASE).getCrypto(ApiEndpoint.CRYPTO_INFO)
+    }
+
+    fun getCryptoDetailData(string:String):Observable<List<CryptoModel>>{
+        return apiGetBuild(ApiEndpoint.CRYPTO_NOMICS_BASE).getCrypto(ApiEndpoint.CRYPTO_DETAİL+string)
+    }
+
+    fun getWalletData(): Observable<List<WalletGetModel>> {
+        return apiGetBuild(ApiEndpoint.APP_API_BASE).getWallet(ApiEndpoint.APP_GET_WALLET)
     }
 }

@@ -1,24 +1,19 @@
 package com.example.kotlincrypto.viewmodel.fragment
 
 import android.app.Application
-import android.content.Intent
 import android.os.Handler
 import android.os.Looper
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
-import com.example.kotlincrypto.constant.ApiEndpoint
-import com.example.kotlincrypto.model.CryptoModel
+import com.example.kotlincrypto.model.entity.CryptoModel
 import com.example.kotlincrypto.service.CryptoApiService
 import com.example.kotlincrypto.util.CustomSharedPreferences
-import com.example.kotlincrypto.view.activity.MainActivity
 import com.example.kotlincrypto.viewmodel.base.BaseViewModel
-import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import java.lang.Exception
 
-class MarketsViewModel(application: Application):BaseViewModel(application) {
+class  MarketsViewModel(application: Application):BaseViewModel(application) {
 
     private val disposable= CompositeDisposable()
     private val cryptoApiService=CryptoApiService()
@@ -46,7 +41,7 @@ class MarketsViewModel(application: Application):BaseViewModel(application) {
          try {
              cryptoLoading.value=true
              disposable.add(
-                 cryptoApiService.getData()
+                 cryptoApiService.getCryptoData()
                      .subscribeOn(Schedulers.newThread())
                      .observeOn(AndroidSchedulers.mainThread())
                      .subscribe(this::handleResponse))
@@ -54,8 +49,9 @@ class MarketsViewModel(application: Application):BaseViewModel(application) {
              cryptoError.value=true
              cryptoLoading.value=false
          }
-
     }
+
+
 
     private fun handleResponse(cryptoList:List<CryptoModel>){
             cryptoModels= ArrayList(cryptoList)
@@ -67,6 +63,8 @@ class MarketsViewModel(application: Application):BaseViewModel(application) {
 
         }
     }
+
+
 
     override fun onCleared() {
         super.onCleared()

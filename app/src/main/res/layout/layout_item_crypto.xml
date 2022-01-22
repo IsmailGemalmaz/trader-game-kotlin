@@ -17,7 +17,7 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:layout_margin="3dp"
-        android:background="@drawable/shape_item_crypto"
+        android:background="@drawable/selector_item_crypto"
         android:layout_gravity="center"
         >
 

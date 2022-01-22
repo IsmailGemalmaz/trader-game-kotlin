@@ -69,17 +69,21 @@ abstract class BaseTemplateDialog:DialogFragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        activity = getActivity() as BaseTemplateActivity?
-        context = activity
+
         val layoutId = getLayoutId()
         vgContent = inflater.inflate(layoutId, null) as ViewGroup
+        return vgContent
+    }
 
-       // mIsActivityRecreated = activity!!.isRecreated()
-        if (mIsActivityRecreated) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        activity = getActivity() as BaseTemplateActivity?
+        context = activity
+        // mIsActivityRecreated = activity!!.isRecreated()
+
             initialize()
             onCreated()
-        }
-        return vgContent
+
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

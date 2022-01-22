@@ -62,12 +62,9 @@ abstract class  BaseTemplateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mIsRecreated = savedInstanceState != null
-        if (mIsRecreated) {
-            restartApp()
-        } else {
-            onCreated()
-            initialize()
-        }
+
+        onCreated()
+        initialize()
     }
 
 

@@ -1,26 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".view.fragment.MarketsFragment">
-
-
+<LinearLayout
+    android:layout_marginBottom="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/layout_screen_radius"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        >
+        <ImageView
+            android:id="@+id/ivUSerImg"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/shape_user_img"
+            android:src="@drawable/img_person_default"
+            />
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="İsmail Gemalmaz"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvUserBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bakiye: $ 10.300"
+        android:layout_gravity="bottom"
+        android:textSize="20sp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        />
+</LinearLayout>
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/srMarkets"
         android:layout_width="match_parent"
-        android:layout_height="80mm"
-        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         >
-
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80mm"
+        android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         >
-
         <TextView
             android:id="@+id/tvCryptoError"
             android:layout_width="match_parent"
@@ -29,7 +66,6 @@
             android:textSize="20sp"
             android:gravity="center"
             />
-
         <ProgressBar
             android:id="@+id/prCryptoLoading"
             android:layout_width="wrap_content"
@@ -37,12 +73,12 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCryptoList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
+            android:layout_height="match_parent"
+            />
     </RelativeLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-</RelativeLayout>
+</LinearLayout>

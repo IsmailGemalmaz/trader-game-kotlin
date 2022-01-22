@@ -2,15 +2,13 @@ package com.example.kotlincrypto.view.fragment
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kotlincrypto.R
 import com.example.kotlincrypto.adapter.CryptoMarketsAdapter
+import com.example.kotlincrypto.model.entity.CryptoModel
 import com.example.kotlincrypto.view.base.BaseFragment
-import com.example.kotlincrypto.view.base.BaseTemplateFragment
 import com.example.kotlincrypto.viewmodel.fragment.MarketsViewModel
 import kotlinx.android.synthetic.main.fragment_markets.*
 
@@ -18,6 +16,8 @@ import kotlinx.android.synthetic.main.fragment_markets.*
 class MarketsFragment :BaseFragment() {
 
     private lateinit var viewModel:MarketsViewModel
+    var cryptoMarketsAdapter:CryptoMarketsAdapter?=null
+    var list:List<CryptoModel>?=null
 
     override fun getLayoutId(): Int {
         return R.layout.fragment_markets
@@ -31,6 +31,7 @@ class MarketsFragment :BaseFragment() {
         viewModel.refreshFromAPI()
 
         observeLiveData()
+
         srMarkets.setOnRefreshListener {
             viewModel.refreshFromAPI()
             srMarkets.isRefreshing=false
@@ -41,13 +42,19 @@ class MarketsFragment :BaseFragment() {
     private fun observeLiveData() {
         viewModel.crypto.observe(viewLifecycleOwner,{crypto->
             crypto?.let{
-                Log.e("Data",crypto.toString())
-                //rcyclerview intialize
-                val cryptoMarketsAdapter= context?.let { CryptoMarketsAdapter(arrayListOf(), it) }
-                rvCryptoList.layoutManager= LinearLayoutManager(context)
+              //  Log.e("Data",crypto.toString())
 
+                list=ArrayList(crypto)
+                Log.e("Data",list.toString())
+                //rcyclerview intialize
+                cryptoMarketsAdapter= context?.let { it1 ->
+                    CryptoMarketsAdapter(arrayListOf(),
+                        it1
+                    )
+                }
+                rvCryptoList.layoutManager= LinearLayoutManager(context)
                 rvCryptoList.adapter=cryptoMarketsAdapter
-                cryptoMarketsAdapter?.updateCountryList(crypto)
+                cryptoMarketsAdapter?.updateCryptoList(crypto)
                 prCryptoLoading.visibility=View.GONE
                 tvCryptoError.visibility=View.GONE
                 rvCryptoList.visibility=View.VISIBLE

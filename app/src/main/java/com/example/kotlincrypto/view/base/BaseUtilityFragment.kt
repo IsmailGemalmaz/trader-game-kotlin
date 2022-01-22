@@ -1,4 +1,4 @@
 package com.example.kotlincrypto.view.base
 
-abstract class BaseUtilityFragment {
+abstract class BaseUtilityFragment :BaseTemplateFragment() {
 }

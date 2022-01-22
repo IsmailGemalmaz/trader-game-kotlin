@@ -2,7 +2,7 @@
 <resources>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item> <!-- tile color -->
+        <item name="colorPrimaryDark">#000AA793</item> <!-- tile color -->
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/windowBackground</item><!-- screen background color -->
         <item name="android:textColorPrimary">@color/colorTextPrimary</item>
@@ -34,5 +34,8 @@
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
+
+
+
 
 </resources>
