@@ -24,7 +24,7 @@ class CryptoItemLayout(context: Context) : FrameLayout(context),View.OnClickList
 
     override fun onClick(v: View?) {
         if(v==llCryotItem){
-            MenuFragmentBottomDialog.showDialog(mContext as BaseTemplateActivity,model)
+            CryptoBottomDialog.showDialog(mContext as BaseTemplateActivity,model)
             //Toast.makeText(context,"${model.id}",Toast.LENGTH_LONG).show()
         }
     }

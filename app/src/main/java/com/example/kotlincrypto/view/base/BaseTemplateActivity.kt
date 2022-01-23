@@ -10,7 +10,7 @@ import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
 import android.R.id.content
 
-abstract class  BaseTemplateActivity : AppCompatActivity() {
+abstract class BaseTemplateActivity : AppCompatActivity() {
 
 
     var context: Context = this

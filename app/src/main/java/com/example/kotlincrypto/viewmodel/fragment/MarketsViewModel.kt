@@ -5,7 +5,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.MutableLiveData
 import com.example.kotlincrypto.model.entity.CryptoModel
-import com.example.kotlincrypto.service.CryptoApiService
+import com.example.kotlincrypto.service.ApiService
 import com.example.kotlincrypto.util.CustomSharedPreferences
 import com.example.kotlincrypto.viewmodel.base.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +16,7 @@ import java.lang.Exception
 class  MarketsViewModel(application: Application):BaseViewModel(application) {
 
     private val disposable= CompositeDisposable()
-    private val cryptoApiService=CryptoApiService()
+    private val cryptoApiService=ApiService()
     private var cryptoModels: ArrayList<CryptoModel>? = null
     private var customPreferences=CustomSharedPreferences(getApplication())
     private val SPLASH_TIME:Long=50000
@@ -24,8 +24,6 @@ class  MarketsViewModel(application: Application):BaseViewModel(application) {
     val crypto=MutableLiveData<List<CryptoModel>>()
     val cryptoError=MutableLiveData<Boolean>()
     val cryptoLoading=MutableLiveData<Boolean>()
-
-
 
     fun refreshData(){
         Handler(Looper.myLooper()!!).postDelayed({
@@ -35,13 +33,14 @@ class  MarketsViewModel(application: Application):BaseViewModel(application) {
 
     fun refreshFromAPI(){
         getDataFromApı()
-    }   
+    }
+
      fun getDataFromApı(){
 
          try {
              cryptoLoading.value=true
              disposable.add(
-                 cryptoApiService.getCryptoData()
+                      cryptoApiService.getCryptoData()
                      .subscribeOn(Schedulers.newThread())
                      .observeOn(AndroidSchedulers.mainThread())
                      .subscribe(this::handleResponse))
@@ -50,8 +49,6 @@ class  MarketsViewModel(application: Application):BaseViewModel(application) {
              cryptoLoading.value=false
          }
     }
-
-
 
     private fun handleResponse(cryptoList:List<CryptoModel>){
             cryptoModels= ArrayList(cryptoList)
@@ -63,8 +60,6 @@ class  MarketsViewModel(application: Application):BaseViewModel(application) {
 
         }
     }
-
-
 
     override fun onCleared() {
         super.onCleared()

@@ -17,7 +17,7 @@ abstract class BaseManagerActivity :BaseUtilityActivity(){
   super.onCreated()
   for (manager in mManagers) {
    manager.onCreated()
-   System.out.println("açıldı"+manager)
+
   }
  }
 

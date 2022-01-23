@@ -8,7 +8,7 @@ import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.http.*
 
-interface CryptoApi {
+interface Api {
 
    // https://api.nomics.com/v1/currencies?key=a8a3452e71305947867f9f04df8fd319&ids=BTC,ETH,XRP&convert=eur açıllamlar bilgiler
     //https://api.nomics.com/v1/currencies/ticker?key=a8a3452e71305947867f9f04df8fd319

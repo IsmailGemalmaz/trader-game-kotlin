@@ -6,20 +6,18 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import com.example.kotlincrypto.R
 import com.example.kotlincrypto.model.entity.CryptoModel
-import com.example.kotlincrypto.model.entity.WalletGetModel
 import com.example.kotlincrypto.model.entity.WalletPostModel
-import com.example.kotlincrypto.service.AppApiService
-import com.example.kotlincrypto.service.CryptoApiService
+import com.example.kotlincrypto.service.ApiService
 import com.example.kotlincrypto.view.base.BaseDialog
-import kotlinx.android.synthetic.main.dialog_get_information.*
+import kotlinx.android.synthetic.main.dialog_information_buy.*
 
-class GetInformationDialog:BaseDialog(),View.OnClickListener {
+class GetBuyInformationDialog:BaseDialog(),View.OnClickListener {
 
     lateinit var model:CryptoModel
     companion object{
 
         fun showDialog(activity:FragmentActivity,model:CryptoModel){
-            var getInformationDialog=GetInformationDialog()
+            var getInformationDialog=GetBuyInformationDialog()
             getInformationDialog.setStock(model)
             getInformationDialog.show(activity)
         }
@@ -35,7 +33,7 @@ class GetInformationDialog:BaseDialog(),View.OnClickListener {
         tvInfoCurrency.setText(model.currency)
     }
     override fun getLayoutId(): Int {
-       return R.layout.dialog_get_information
+       return R.layout.dialog_information_buy
     }
 
     override fun setListeners() {
@@ -55,8 +53,8 @@ class GetInformationDialog:BaseDialog(),View.OnClickListener {
     }
 
     fun addDummyWallet() {
-        var etAmount= etAmountt.editText?.text.toString().trim()
-        val apiService =CryptoApiService()
+        val etAmount= etAmountt.editText?.text.toString().trim()
+        val apiService =ApiService()
         val userInfo = WalletPostModel(  userId = 2,
             currency = model.currency,
             amount = etAmount

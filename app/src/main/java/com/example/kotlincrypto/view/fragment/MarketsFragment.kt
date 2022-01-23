@@ -44,7 +44,7 @@ class MarketsFragment :BaseFragment() {
             crypto?.let{
               //  Log.e("Data",crypto.toString())
 
-                list=ArrayList(crypto)
+                list=ArrayList(it)
                 Log.e("Data",list.toString())
                 //rcyclerview intialize
                 cryptoMarketsAdapter= context?.let { it1 ->
@@ -55,6 +55,7 @@ class MarketsFragment :BaseFragment() {
                 rvCryptoList.layoutManager= LinearLayoutManager(context)
                 rvCryptoList.adapter=cryptoMarketsAdapter
                 cryptoMarketsAdapter?.updateCryptoList(crypto)
+
                 prCryptoLoading.visibility=View.GONE
                 tvCryptoError.visibility=View.GONE
                 rvCryptoList.visibility=View.VISIBLE

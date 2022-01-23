@@ -28,6 +28,7 @@
             android:fontFamily="sans-serif"
             android:text="@string/tv_buy"
             android:textColor="@color/colorBuy"
+            android:layout_gravity="center"
             />
 
         <TextView

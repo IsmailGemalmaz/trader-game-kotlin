@@ -9,14 +9,11 @@ import io.reactivex.Observable
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
 
-class CryptoApiService {
+class ApiService {
 
     fun addWallet(walletData: WalletPostModel, onResult:(WalletPostModel)->Unit){
-        val retrofit = ServiceBuilder.buildService(CryptoApi::class.java,ApiEndpoint.APP_API_BASE)
+        val retrofit = ServiceBuilder.buildService(Api::class.java,ApiEndpoint.APP_API_BASE)
         retrofit.addWallet(ApiEndpoint.APP_POST_WALLET,walletData).enqueue(
             object : Callback<WalletPostModel> {
                 override fun onFailure(call: Call<WalletPostModel>, t: Throwable) {
@@ -41,6 +38,7 @@ class CryptoApiService {
     }
 
     fun getWalletData(): Observable<List<WalletGetModel>> {
+
         return apiGetBuild(ApiEndpoint.APP_API_BASE).getWallet(ApiEndpoint.APP_GET_WALLET)
     }
 }

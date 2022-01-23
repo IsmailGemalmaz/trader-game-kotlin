@@ -38,7 +38,7 @@
             <Button
                 android:id="@+id/btnBuy"
                 style="@style/DialogButton"
-                android:text="Satın Al"
+                android:text="Satın al"
                 android:textColor="@color/green"
                android:background="@drawable/selector_bottom_dialog_btn"
                 />
@@ -59,7 +59,7 @@
             android:id="@+id/btnCancel"
             style="@style/DialogButton"
             android:text="İptal Et"
-            android:textColor="@color/red"
+            android:textColor="@color/teal_700"
             android:background="@drawable/selector_bottom_dialog_btn"
             />
     </androidx.cardview.widget.CardView>

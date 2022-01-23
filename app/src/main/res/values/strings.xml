@@ -6,8 +6,10 @@
     <string name="no_connection_internet">İnternet Bağlantısı Yok</string>
 
     <string name="tv_buy">Satın Al</string>
-    <string name="tv_sell">Satın Al</string>
+    <string name="tv_sell">SAT</string>
     <string name="btn_buy">Satın Al</string>
+
+    <string name="btn_transection">İşlem Yap</string>
 
 
     <string name="tv_accept">Kabul Et</string>

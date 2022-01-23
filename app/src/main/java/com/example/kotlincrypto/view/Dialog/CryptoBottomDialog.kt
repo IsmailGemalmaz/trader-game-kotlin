@@ -1,33 +1,29 @@
 package com.example.kotlincrypto.view.Dialog
 
-import android.app.Dialog
-import android.content.DialogInterface
-import android.graphics.drawable.ColorDrawable
-import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentActivity
 import com.example.kotlincrypto.R
 import com.example.kotlincrypto.model.entity.CryptoModel
+import com.example.kotlincrypto.model.entity.WalletGetModel
 import com.example.kotlincrypto.view.activity.CryptoDetailActivity
 import com.example.kotlincrypto.view.base.BaseDialog
-import com.example.kotlincrypto.view.base.BaseTemplateActivity
-import kotlinx.android.synthetic.main.dialog_bottom_fragment_menu.*
+import kotlinx.android.synthetic.main.dialog_bottom_crypto.*
 
-open class MenuFragmentBottomDialog : BaseDialog(),View.OnClickListener{
+
+open class CryptoBottomDialog : BaseDialog(),View.OnClickListener{
+
     lateinit var model:CryptoModel
+
 companion object {
     fun showDialog(activity: FragmentActivity,model: CryptoModel){
-        val alert= MenuFragmentBottomDialog()
+        val alert= CryptoBottomDialog()
         alert.setStock(model)
         alert.show(activity)
         }
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.dialog_bottom_fragment_menu
+        return R.layout.dialog_bottom_crypto
     }
 
     override fun createViews() {
@@ -53,7 +49,7 @@ companion object {
         }else if(v==llDialog){
             dismiss()
         }else if(v==btnBuy){
-            activity?.let { GetInformationDialog.showDialog(it,model) }
+            activity?.let { GetBuyInformationDialog.showDialog(it,model) }
             dismiss()
         }
     }
