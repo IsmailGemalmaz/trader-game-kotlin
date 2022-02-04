@@ -56,7 +56,10 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             app:counterMaxLength="5"
-            app:startIconDrawable="@drawable/img_dolar">
+            app:startIconDrawable="@drawable/img_dolar"
+            app:endIconMode="custom"
+            app:startIconTint="@color/white"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAmount"

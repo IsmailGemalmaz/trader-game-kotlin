@@ -8,7 +8,8 @@ import androidx.preference.PreferenceManager
 class CustomSharedPreferences {
 
     companion object {
-        private val PREFERENCES_TIME="time"
+        private val PREFERENCES_TOKEN="token"
+        private val PREFERENCES_USERID="userId"
         private var sharedPrefences: SharedPreferences?=null
 
         @Volatile private var instance :CustomSharedPreferences?=null
@@ -26,11 +27,19 @@ class CustomSharedPreferences {
         }
     }
 
-    fun saveTime(time:Long){
+    fun saveToken(jwtToken:String){
         sharedPrefences?.edit(commit=true){
-            putLong(PREFERENCES_TIME,time)
+            putString(PREFERENCES_TOKEN,jwtToken)
         }
     }
 
-    fun getTime()= sharedPrefences?.getLong(PREFERENCES_TIME,0)
+    fun getToken()= sharedPrefences?.getString(PREFERENCES_TOKEN,"TOKEN VALUE")
+
+    fun saveUserId(userId:Int){
+        sharedPrefences?.edit(commit=true){
+            putInt(PREFERENCES_USERID,userId)
+        }
+    }
+
+    fun getUserId()= sharedPrefences?.getInt(PREFERENCES_USERID,0)
 }

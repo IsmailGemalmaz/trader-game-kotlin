@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
-import android.widget.Toast
 import com.example.kotlincrypto.R
 import com.example.kotlincrypto.model.entity.WalletGetModel
 import com.example.kotlincrypto.view.Dialog.WalletBottomDialog

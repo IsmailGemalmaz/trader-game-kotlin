@@ -3,16 +3,13 @@ package com.example.kotlincrypto.view.Dialog
 import android.view.View
 import androidx.fragment.app.FragmentActivity
 import com.example.kotlincrypto.R
-import com.example.kotlincrypto.model.entity.CryptoModel
 import com.example.kotlincrypto.model.entity.WalletGetModel
 import com.example.kotlincrypto.view.activity.CryptoDetailActivity
 import com.example.kotlincrypto.view.base.BaseDialog
-import kotlinx.android.synthetic.main.dialog_bottom_crypto.*
 import kotlinx.android.synthetic.main.dialog_bottom_crypto.btnBuy
 import kotlinx.android.synthetic.main.dialog_bottom_crypto.btnCancel
 import kotlinx.android.synthetic.main.dialog_bottom_crypto.btnDetail
 import kotlinx.android.synthetic.main.dialog_bottom_crypto.llDialog
-import kotlinx.android.synthetic.main.dialog_bottom_wallet.*
 
 class WalletBottomDialog: BaseDialog(),View.OnClickListener {
 

@@ -48,7 +48,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etAmountt"
+            android:id="@+id/etSellAmount"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:hint="Fiyat Gir"
@@ -56,7 +56,10 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             app:counterMaxLength="5"
-            app:startIconDrawable="@drawable/img_dolar">
+            app:startIconDrawable="@drawable/img_dolar"
+            app:endIconMode="custom"
+            app:startIconTint="@color/white"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAmount"

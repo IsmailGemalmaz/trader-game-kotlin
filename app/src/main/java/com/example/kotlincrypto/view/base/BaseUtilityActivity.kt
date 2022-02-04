@@ -1,5 +1,6 @@
 package com.example.kotlincrypto.view.base
 
+import com.example.kotlincrypto.util.CustomSharedPreferences
 import java.util.concurrent.atomic.AtomicInteger
 
 abstract class BaseUtilityActivity :BaseTemplateActivity(){
@@ -9,6 +10,10 @@ abstract class BaseUtilityActivity :BaseTemplateActivity(){
 
     open fun getNewExtraId(): String? {
         return "extra_" +sExtraIdGeneratorIndex.getAndIncrement()
+    }
+
+    open fun getPreference(): CustomSharedPreferences? {
+        return CustomSharedPreferences()
     }
 
 }

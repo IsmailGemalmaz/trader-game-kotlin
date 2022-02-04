@@ -8,11 +8,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ServiceBuilder {
 
 
+
+
     fun apiPostBuild(string: String):Retrofit{
         val client = OkHttpClient.Builder().build()
         val retrofit = Retrofit.Builder()
             .baseUrl(string) // change this IP for testing by your actual machine IP
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(client)
             .build()
         return retrofit

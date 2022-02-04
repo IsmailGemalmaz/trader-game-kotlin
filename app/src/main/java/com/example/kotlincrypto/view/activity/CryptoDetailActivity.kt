@@ -4,10 +4,12 @@ import android.app.Activity
 import android.content.Intent
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.kotlincrypto.R
 import com.example.kotlincrypto.constant.CryptoStockItemType
 import com.example.kotlincrypto.model.entity.CryptoModel
+import com.example.kotlincrypto.view.Dialog.GetBuyInformationDialog
 import com.example.kotlincrypto.view.base.BaseActivity
 import com.example.kotlincrypto.viewmodel.activity.CryptoDetailViewModel
 import kotlinx.android.synthetic.main.activity_crypto_detail.*
@@ -18,6 +20,7 @@ class CryptoDetailActivity :BaseActivity(),View.OnClickListener {
     internal val EXTRA_STOCK_ID: kotlin.String? = getNewExtraId()
 
     private lateinit var viewModel: CryptoDetailViewModel
+   lateinit var cryptoModel: CryptoModel
    // lateinit var list:List<CryptoModel>
     companion object {
 
@@ -30,14 +33,11 @@ class CryptoDetailActivity :BaseActivity(),View.OnClickListener {
 
     override fun createViews() {
         super.createViews()
-        var id=intent.getStringExtra("EXTRA_ID")
+       var id= intent.getStringExtra("EXTRA_ID")
         tvCoinName.setText(id)
         viewModel= ViewModelProvider(this).get(CryptoDetailViewModel::class.java)
-        if (id != null) {
-            viewModel.getDataFromApı(id)
-        }
+        id?.let { viewModel.getDataFromApı(it) }
         observeLiveData()
-
     }
 
     override fun getLayoutId(): Int {
@@ -47,17 +47,21 @@ class CryptoDetailActivity :BaseActivity(),View.OnClickListener {
     override fun setListeners() {
         super.setListeners()
             ibDetailBack.setOnClickListener(this)
+            btnDetailBuy.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         if(v==ibDetailBack){
             onBackPressed()
+        }else if(v==btnDetailBuy){
+                GetBuyInformationDialog.showDialog(this,cryptoModel)
         }
     }
 
     private fun observeLiveData() {
         viewModel.crypto.observe(this,{crypto->
             crypto?.let{
+                cryptoModel=it.get(0)
                 Log.e("Data",crypto.toString())
                 handleResponseData(crypto)
             } })

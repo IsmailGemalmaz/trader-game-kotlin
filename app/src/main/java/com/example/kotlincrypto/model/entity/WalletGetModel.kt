@@ -8,5 +8,7 @@ data class WalletGetModel (
     @SerializedName("amount")
     val amount:String?,
     @SerializedName("name")
-    val name:String?
+    val name:String?,
+    @SerializedName("id")
+    val id:Int?
     )

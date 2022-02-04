@@ -27,7 +27,7 @@ class SplashActivity :BaseActivity(){
 
         Handler(Looper.myLooper()!!).postDelayed({
             if(manager.activeNetwork !=null){
-                startActivity(Intent(this,MainActivity::class.java))
+                startActivity(Intent(this,SignInActivity::class.java))
                 finish()
             }else{
                 Toast.makeText(this,R.string.no_connection_internet,Toast.LENGTH_SHORT).show()

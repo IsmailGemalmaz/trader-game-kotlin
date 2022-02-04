@@ -17,7 +17,7 @@ class  MarketsViewModel(application: Application):BaseViewModel(application) {
 
     private val disposable= CompositeDisposable()
     private val cryptoApiService=ApiService()
-    private var cryptoModels: ArrayList<CryptoModel>? = null
+    //private var cryptoModels: ArrayList<CryptoModel>? = null
     private var customPreferences=CustomSharedPreferences(getApplication())
     private val SPLASH_TIME:Long=50000
 
@@ -36,7 +36,6 @@ class  MarketsViewModel(application: Application):BaseViewModel(application) {
     }
 
      fun getDataFromApı(){
-
          try {
              cryptoLoading.value=true
              disposable.add(
@@ -51,14 +50,20 @@ class  MarketsViewModel(application: Application):BaseViewModel(application) {
     }
 
     private fun handleResponse(cryptoList:List<CryptoModel>){
-            cryptoModels= ArrayList(cryptoList)
 
-        cryptoModels?.let {
+        crypto?.let {
+            crypto.value = cryptoList
+            cryptoLoading.value = false
+            cryptoError.value = false
+        }
+        /*
+            cryptoModels= ArrayList(cryptoList)
+         cryptoModels?.let {
             crypto.value = cryptoList
             cryptoLoading.value = false
             cryptoError.value = false
 
-        }
+        }*/
     }
 
     override fun onCleared() {

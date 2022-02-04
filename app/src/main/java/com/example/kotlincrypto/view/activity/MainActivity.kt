@@ -1,15 +1,12 @@
 package com.example.kotlincrypto.view.activity
 
-
-import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
-import android.os.PersistableBundle
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
+import android.content.Intent
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.kotlincrypto.R
+import com.example.kotlincrypto.util.CustomSharedPreferences
 import com.example.kotlincrypto.view.base.BaseActivity
-import com.example.kotlincrypto.view.base.BaseTemplateActivity
 import com.example.kotlincrypto.view.fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,6 +20,12 @@ class MainActivity:BaseActivity() {
     private val sortingFragment=SortingFragment()
     private val walletFragment=WalletFragment()
 
+    companion object {
+        fun start(activity: Activity){
+            var intent= Intent(activity,MainActivity::class.java)
+            activity.startActivity(intent)
+        }
+    }
 
     override fun getLayoutId(): Int {
         return R.layout.activity_main
@@ -35,7 +38,7 @@ class MainActivity:BaseActivity() {
             when (it.itemId) {
                 R.id.ic_markets -> replaceFragment(marketsFragment)
                 R.id.ic_settings -> replaceFragment(settingsFragment)
-                R.id.ic_sorting -> replaceFragment(sortingFragment)
+              //  R.id.ic_sorting -> replaceFragment(sortingFragment)
                 R.id.ic_home -> replaceFragment(homeFragment)
             }
             true

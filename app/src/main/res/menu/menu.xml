@@ -12,11 +12,12 @@
         android:icon="@drawable/bv_markets"
         android:title="Piyasalar"
         />
-    <item
-        android:id="@+id/ic_sorting"
-        android:icon="@drawable/bv_sorting"
-        android:title="Sıralama"
-        />
+
+<!--    <item-->
+<!--        android:id="@+id/ic_sorting"-->
+<!--        android:icon="@drawable/bv_sorting"-->
+<!--        android:title="Sıralama"-->
+<!--        />-->
     <item
         android:id="@+id/ic_settings"
         android:icon="@drawable/bv_settings"

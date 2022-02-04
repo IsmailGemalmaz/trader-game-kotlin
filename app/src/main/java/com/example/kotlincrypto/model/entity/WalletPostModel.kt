@@ -7,6 +7,6 @@ data class WalletPostModel (
     val userId:Int?,
     @SerializedName("currency")
     val currency:String?,
-    @SerializedName("amount")
+     @SerializedName("amount")
     val amount:String?
 )

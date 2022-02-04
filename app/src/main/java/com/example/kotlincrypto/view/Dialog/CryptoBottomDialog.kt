@@ -4,7 +4,6 @@ import android.view.View
 import androidx.fragment.app.FragmentActivity
 import com.example.kotlincrypto.R
 import com.example.kotlincrypto.model.entity.CryptoModel
-import com.example.kotlincrypto.model.entity.WalletGetModel
 import com.example.kotlincrypto.view.activity.CryptoDetailActivity
 import com.example.kotlincrypto.view.base.BaseDialog
 import kotlinx.android.synthetic.main.dialog_bottom_crypto.*

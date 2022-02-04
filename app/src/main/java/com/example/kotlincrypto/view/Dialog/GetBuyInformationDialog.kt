@@ -1,6 +1,7 @@
 package com.example.kotlincrypto.view.Dialog
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.dialog_information_buy.*
 class GetBuyInformationDialog:BaseDialog(),View.OnClickListener {
 
     lateinit var model:CryptoModel
+    lateinit var string:String
     companion object{
 
         fun showDialog(activity:FragmentActivity,model:CryptoModel){
@@ -30,7 +32,7 @@ class GetBuyInformationDialog:BaseDialog(),View.OnClickListener {
 
     override fun createViews() {
         super.createViews()
-        tvInfoCurrency.setText(model.currency)
+            tvInfoCurrency.setText(model.currency)
     }
     override fun getLayoutId(): Int {
        return R.layout.dialog_information_buy
@@ -44,7 +46,7 @@ class GetBuyInformationDialog:BaseDialog(),View.OnClickListener {
 
     override fun onClick(v: View?) {
         if(v==btnInformationBuy){
-            addDummyWallet()
+            addWallet()
             Toast.makeText(context,"Cüzdana Eklendi ${model.currency}",Toast.LENGTH_LONG).show()
             dismiss()
         }else if(v==ibClose){
@@ -52,10 +54,11 @@ class GetBuyInformationDialog:BaseDialog(),View.OnClickListener {
         }
     }
 
-    fun addDummyWallet() {
+    fun addWallet() {
         val etAmount= etAmountt.editText?.text.toString().trim()
         val apiService =ApiService()
-        val userInfo = WalletPostModel(  userId = 2,
+        Log.e("USER ID DİALOG",getPreference()?.getUserId().toString())
+        val userInfo = WalletPostModel(  userId = getPreference()?.getUserId(),
             currency = model.currency,
             amount = etAmount
         )

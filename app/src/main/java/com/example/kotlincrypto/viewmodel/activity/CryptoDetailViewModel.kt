@@ -31,6 +31,8 @@ class CryptoDetailViewModel(application: Application):BaseViewModel(application)
 
         }
     }
+
+
     private fun handleResponse(cryptoList:List<CryptoModel>){
         cryptoModels= ArrayList(cryptoList)
         cryptoModels?.let {

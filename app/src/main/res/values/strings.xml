@@ -11,8 +11,22 @@
 
     <string name="btn_transection">İşlem Yap</string>
 
-
+    <string name="login_signin_info">Kayıt Olmadıysan </string>
+    <string name="login_signin_info_register"> Kayıt Ol..</string>
     <string name="tv_accept">Kabul Et</string>
 
     <string name="tv_price"> $</string>
+
+    <string name="validation_default">Boş bırakılamaz</string>
+    <string name="validation_email">Geçerli bir e-posta adresi girin</string>
+    <string name="email_exist_error">Bu e-posta adresi kullanılmaktadır</string>
+    <string name="password_wrong_error">Yanlış Şifre</string>
+    <string name="email_wrong_error">Yanlış Şifre</string>
+    <string name="validation_name_min_character">Kullanıcı adı en az 3 karakter olabilir</string>
+    <string name="validation_surname_min_character">Soyadı en az 3 karakter olabilir</string>
+    <string name="validation_password_min_character">Şifre en az 6 karakter olabilir</string>
+    <string name="validation_password_again_incompatible">Şifreler uyuşmuyor</string>
+    <string name="validation_user">Böyle bir kullanıcı yok, kullanıcı oluşturun.</string>
+    <string name="account_info">Hesaba giriş yapılamadı!HATA</string>
+
 </resources>
